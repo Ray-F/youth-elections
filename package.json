@@ -24,7 +24,7 @@
   "scripts": {
     "client": "cd client && yarn run start",
     "server": "cd server && yarn run start",
-    "dev-start": "concurrently \"npm run server\" \"npm run client\""
+    "dev-start": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "dependencies": {
     "concurrently": "^5.2.0"
