@@ -1,7 +1,7 @@
 {
   "name": "youth-elections",
   "version": "1.0.0",
-  "description": "a web application for running a virtual youth election for the 2020 new zealand general elections",
+  "description": "a web app hosting a virtual youth election for the 2020 new zealand general elections",
   "main": "server/app.js",
   "repository": "https://Ray-F@github.com/Ray-F/youth-elections.git",
   "author": {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../scss/App.scss';
+
+const PUBLIC_URL = process.env.PUBLIC_URL;
 
 class App extends Component {
   state = {users: []}
@@ -19,24 +20,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={PUBLIC_URL + "/resources/logo.svg"} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            <code>Welcome to NZ Youth Elections 2020</code>
           </p>
-          <p>You are a poop.</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+
+          <p>Check back later for more info.<br />
+          (made with <code>react.js</code>)
+          </p>
+
         </header>
 
-        {this.state.users.map(user =>
-          <p>{user.value}</p>
-        )}
+        {this.state.users.map(user => <p>{user.value}</p>)}
       </div>
     );
   }
