@@ -10,7 +10,7 @@ class App extends Component {
   componentDidMount() {
 
     // running server query to express API (server)
-    fetch('users/')
+    fetch('/users')
       .then(res => res.json())
       .then(res => this.setState({ users: res }));
   }

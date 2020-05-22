@@ -12,6 +12,9 @@ app.use(cookieParser());
 
 // Routing
 app.use('/', require('./routes/index'));
+app.use('/photos', require('./routes/photos'));
+app.use('/users', require('./routes/customers'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) { next(createError(404)); });
