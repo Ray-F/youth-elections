@@ -12,7 +12,7 @@ class App extends Component {
     // running server query to express API (server)
     fetch('users/')
       .then(res => res.json())
-      .then(users => this.setState({ users }));
+      .then(res => this.setState({ users: res }));
   }
 
   // render engine to index
@@ -24,14 +24,29 @@ class App extends Component {
           <p>
             <code>Welcome to NZ Youth Elections 2020</code>
           </p>
+          <form action = "/users" method = "POST">
+            <label for = "name">Name: </label>
+            <input name = "name" />
+            <br />
 
-          <p>Check back later for more info.<br />
-          (made with <code>react.js</code>)
-          </p>
+            <label for = "name">Address: </label>
+            <input name = "address" />
+            <br />
 
+            <label for = "name">Phone: </label>
+            <input name = "phone" />
+            <br/>
+
+            <button type = "submit">Create new person</button>
+
+          </form>
         </header>
 
-        {this.state.users.map(user => <p>{user.value}</p>)}
+        {this.state.users.map(user => <div>
+        <h3>{user.name}</h3>
+          <p><b>Address: </b>{user.address}</p>
+          <p><b>Phone: </b>{user.phone}</p>
+          <form action = {"/users/delete/" + user._id}><button type = "submit">Delete</button></form></div>)}
       </div>
     );
   }
